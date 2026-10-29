@@ -1,4 +1,4 @@
-# 🚀 Resume Fit ATS - Otimizador Inteligente de Currículos
+#  Resume Fit ATS - Otimizador Inteligente de Currículos
 
 > Aplicação web desenvolvida para o desafio de projeto da DIO utilizando **Lovable.dev**, **React**, **Tailwind CSS** e **Shadcn/ui**.
 
@@ -6,10 +6,10 @@
 
 ---
 
-## 🎯 O Problema
+##  O Problema
 Muitos currículos bem qualificados são descartados por sistemas de triagem automática (ATS - Applicant Tracking System) antes de chegar às mãos do RH. Isso ocorre por falta de correspondência exata nas palavras-chave exigidas pela vaga ou por formatação inadequada para leitura automatizada.
 
-## 💡 A Solução
+##  A Solução
 O **Resume Fit ATS** analisa o currículo do candidato em simultâneo com a descrição da vaga desejada, fornecendo:
 - **Match Score:** Porcentagem de compatibilidade em tempo real.
 - **Diagnóstico de Palavras-Chave:** Termos identificados e lacunas críticas.
@@ -17,7 +17,7 @@ O **Resume Fit ATS** analisa o currículo do candidato em simultâneo com a desc
 
 ---
 
-## 📸 Demonstração da Aplicação
+##  Demonstração da Aplicação
 
 <img width="1919" height="917" alt="image" src="https://github.com/user-attachments/assets/7ac5b4c2-16c3-4c56-ad81-da607417f7ce" />
 
@@ -27,7 +27,7 @@ O **Resume Fit ATS** analisa o currículo do candidato em simultâneo com a desc
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 - **IA & Prototipagem:** Lovable.dev
 - **Frontend:** React, TypeScript, Vite
 - **Estilização:** Tailwind CSS, Shadcn/ui
@@ -35,7 +35,7 @@ O **Resume Fit ATS** analisa o currículo do candidato em simultâneo com a desc
 
 ---
 
-## 📝 Mega Prompt Utilizado
+##  Mega Prompt Utilizado
 
 <details>
 <summary>Clique para expandir o Mega Prompt em Markdown</summary>
