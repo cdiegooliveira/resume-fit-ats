@@ -19,6 +19,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Compare seu currículo com a vaga, veja o Match Score e gere uma versão otimizada para ATS." },
       { property: "og:title", content: "ResumeMatch ATS — Otimizador de Currículos" },
       { property: "og:description", content: "Aumente suas chances de passar pelos filtros automatizados do RH." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -50,15 +52,15 @@ function Gauge({ score }: { score: number }) {
 
 function InputPanel({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string) => void; placeholder: string }) {
   return (
-    <div className="rounded-xl border bg-card p-4">
-      <div className="mb-2 flex items-center justify-between">
+    <div className="rounded-lg border bg-card p-4">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <h2 className="font-semibold">{label}</h2>
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           {value.length.toLocaleString("pt-BR")} caracteres
           <Button variant="ghost" size="sm" onClick={() => onChange("")} disabled={!value}><Eraser className="h-4 w-4" /> Limpar</Button>
         </div>
       </div>
-      <Textarea value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="h-72 resize-none bg-background" />
+      <Textarea aria-label={label} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="h-72 resize-none bg-background" />
     </div>
   );
 }
@@ -86,8 +88,8 @@ function Index() {
       <header className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-10 text-center">
           <div className="mb-3 inline-flex items-center gap-2">
-            <div className="rounded-lg bg-gradient-primary p-2 shadow-glow"><Target className="h-6 w-6 text-primary-foreground" /></div>
-            <h1 className="text-3xl font-extrabold tracking-tight">ResumeMatch <span className="text-primary">ATS</span></h1>
+            <div className="rounded-lg border bg-secondary p-2"><Target className="h-6 w-6 text-foreground" /></div>
+            <h1 className="text-3xl font-semibold">ResumeMatch <span className="text-muted-foreground">ATS</span></h1>
           </div>
           <p className="text-muted-foreground">Aumente suas chances de passar pelos filtros automatizados do RH.</p>
           <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs">
@@ -109,7 +111,7 @@ function Index() {
           <InputPanel label="Descrição da Vaga" value={job} onChange={setJob} placeholder="Cole aqui a descrição da vaga..." />
           <InputPanel label="Currículo Atual" value={resume} onChange={setResume} placeholder="Cole aqui o texto do seu currículo..." />
         </div>
-        <Button size="lg" onClick={run} disabled={loading} className="h-14 w-full bg-gradient-primary text-lg font-semibold shadow-glow hover:opacity-90">
+        <Button size="lg" onClick={run} disabled={loading} className="min-h-14 h-auto w-full whitespace-normal py-3 text-base font-semibold">
           {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Sparkles className="h-5 w-5" />}
           {loading ? "Analisando requisitos da vaga..." : "Analisar e Otimizar Currículo"}
         </Button>
