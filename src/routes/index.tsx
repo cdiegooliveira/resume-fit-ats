@@ -71,7 +71,7 @@ function Index() {
   const analyze = useServerFn(analyzeResume);
 
   async function run() {
-    if (job.trim().length < 30 || resume.trim().length < 30) return toast.error("Cole a vaga e o currículo (mínimo 30 caracteres cada).");
+    if (job.trim().length < 30 || resume.trim().length < 30) { toast.error("Cole a vaga e o currículo (mínimo 30 caracteres cada)."); return; }
     setLoading(true); setResult(null);
     try {
       setResult(await analyze({ data: { job, resume } }));

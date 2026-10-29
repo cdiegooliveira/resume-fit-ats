@@ -35,7 +35,7 @@ export const analyzeResume = createServerFn({ method: "POST" })
   .handler(async ({ data }): Promise<AnalysisResult> => {
     const { createOpenAI } = await import("@ai-sdk/openai");
     const { streamText, Output } = await import("ai");
-    const apiKey = process.env.LOVABLE_API_KEY;
+    const apiKey = process.env["LOVABLE_API_KEY"];
     if (!apiKey) throw new Error("Serviço de IA não configurado.");
     const provider = createOpenAI({
       baseURL: "https://ai.gateway.lovable.dev/v1",
